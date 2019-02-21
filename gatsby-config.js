@@ -19,8 +19,7 @@ module.exports = {
             options: {
                 implementation: require("sass"),
                 postCssPlugins: [require('postcss-import')], 
-                includePaths: ["node_modules", "src"],
-                camelCase: false,
+                includePaths: ["node_modules", "src"], 
             },
         }
 	]

@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import withBootstrapSpacing from 'src/hoc/withBootstrapSpacing';
+import React, { Component } from "react"; 
+import withBootstrapUtility, { AvailableUtilities } from "src/hoc/withBootstrapUtility/withBootstrapUtility";
 
 class Header extends Component {
     render () {
-        const { children, tag = 'h1', classNameSpacing='' } = this.props;  
+        const { children, tag = 'h1', utilitiesClassName='' } = this.props;  
         const Tag = tag;
         return ( 
-            <Tag className={`hola-mundo ${classNameSpacing}`} >{ children }</Tag> 
+            <Tag className={`${utilitiesClassName}`} >{ children }</Tag> 
         );
     }
 }
 
-export default withBootstrapSpacing(Header);
+const {spacing, text} = AvailableUtilities;
+export default withBootstrapUtility({ spacing, text }, Header);
